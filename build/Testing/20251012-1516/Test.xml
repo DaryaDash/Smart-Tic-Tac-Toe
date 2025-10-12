@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-MSBuild"
+	BuildStamp="20251012-1516-Experimental"
+	Name="DESKTOP-BEMGEPJ"
+	Generator="ctest-4.1.2"
+	CompilerName="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe"
+	CompilerVersion="19.44.35211.0"
+	OSName="Windows"
+	Hostname="DESKTOP-BEMGEPJ"
+	OSRelease=" Personal"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="8"
+	ModelName="AMD Ryzen 7 5700U with Radeon Graphics"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="18138"
+	TotalPhysicalMemory="15706"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="1801"
+	>
+	<Testing>
+		<StartDateTime>Oct 13 00:30 RTZ 6 ([NON-UTF-8-BYTE-0xE7][NON-UTF-8-BYTE-0xE8][NON-UTF-8-BYTE-0xEC][NON-UTF-8-BYTE-0xE0])</StartDateTime>
+		<StartTestTime>1760290202</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 13 00:30 RTZ 6 ([NON-UTF-8-BYTE-0xE7][NON-UTF-8-BYTE-0xE8][NON-UTF-8-BYTE-0xEC][NON-UTF-8-BYTE-0xE0])</EndDateTime>
+		<EndTestTime>1760290202</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
