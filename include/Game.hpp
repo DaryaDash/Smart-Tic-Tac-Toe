@@ -16,6 +16,7 @@ private:
     Board::Cell curr(Board::Cell who);
     void restart();
     void ticTackToe();
+    void menu();
     
     
 };
