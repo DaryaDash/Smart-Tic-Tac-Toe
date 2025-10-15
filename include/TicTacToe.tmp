@@ -1,0 +1,130 @@
+#include <array>
+#include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+
+
+class Board {
+
+    public:
+
+    enum class Cell {Empty = '_', X = 'X', O='O'};
+
+    Board() {cells.fill(Cell::Empty);}
+
+    Cell at(int i, int j) const {return cells[idx(i, j)]; }
+
+    bool makeMove(int i, int j, Cell who){
+        if( at(i,j) == Cell::Empty){
+            cells[idx(i,j)] = who;
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    void printBaord ()const{
+        for (int i = 0; i < 3; ++i){
+            for (int j = 0 ; j < 3; ++ j){
+                std::cout << static_cast<char>(at(i , j)) << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    
+
+    private:
+
+        static constexpr int N=3;
+        std::array<Cell, N*N> cells{};
+        static int idx(int i, int j){return i * N + j;}
+    
+    
+
+};
+
+class GUI{
+public:
+    sf::RenderWindow window;
+
+    GUI() {
+        sf::VideoMode mode = sf::VideoMode::getDesktopMode();
+        window.create(mode, "Полноэкранный режим", sf::State::Windowed);
+        if (!font.openFromFile("Comic Jungle.ttf"))   // put a .ttf there
+            throw std::runtime_error("Failed to load font");
+        text.setFont(font);                                        // bind font once
+        window.clear(BG_COLOR);
+        window.clear(BG_COLOR);
+    }
+
+    sf::RenderWindow& getWindow() { return window; }
+
+    void drawFileld(){
+        sf::Vector2u size = window.getSize();
+        float x_center = (float)size.x * 0.5f;
+        float y_center = (float)size.y * 0.5f;
+        float step = x_center / 4;
+        float leight = x_center * 0.8f;
+        sf::RectangleShape line({leight , step / 30.f});
+        line.setFillColor(FIELD_COLOR);
+        line.setOrigin({leight / 2, 2.5f});
+        cellSize = step;
+        float x_start = x_center - step * 0.5f;
+        float y_start = y_center - step * 0.5f;
+        y_first_cell = y_start - step;
+        x_first_cell = x_start - step;
+
+        for (int i = 0; i < 2; ++i){
+            line.setPosition({x_center, y_start + step * i});
+            window.draw(line);
+        }
+        for (int i = 0; i < 2; ++i){
+            line.setRotation(sf::degrees(90));
+            line.setPosition({x_start + step * i, y_center});
+            window.draw(line);
+        }
+    }
+    void drawMove(Board& board, int x, int y, Board::Cell who){
+        float xBoardSize = x_first_cell + cellSize *3.f;
+        float yBoardSize = y_first_cell + cellSize *3.f;
+        int i = 3;
+        int j = 3;
+        if (Board::Cell::O == who){
+            text.setString("O");
+            text.setFillColor(O_COLOR);
+        }
+        if (Board::Cell::X == who){
+            text.setString("X");
+            text.setFillColor(X_COLOR);
+        }
+
+        text.setCharacterSize(cellSize * 0.8f); 
+        text.setStyle(sf::Text::Bold);
+
+        if ((x >= x_first_cell && x <= xBoardSize) && 
+            (y >= y_first_cell && y <= yBoardSize ) &
+                board.makeMove(i,j,who))
+            {
+                i = i - (int)(xBoardSize / (float)x);
+                j = j - (int)(xBoardSize / (float)y);
+                text.setPosition({(x_first_cell+cellSize/2.f) + cellSize * i, (y_first_cell+cellSize/2.f) + cellSize * j});
+                window.draw(text);
+                   }
+
+    }
+
+    private:
+        float cellSize = 0.f;
+        float x_first_cell = 0.f;
+        float y_first_cell = 0.f;
+        sf::Color BG_COLOR = sf::Color(237, 248, 255);
+        sf::Color FIELD_COLOR = sf::Color(19, 19, 19);
+        sf::Color X_COLOR = sf::Color(193, 224, 59);
+        sf::Color O_COLOR = sf::Color(224, 59, 193);
+        sf::Font font;
+        sf::Text text;
+
+};
+
+

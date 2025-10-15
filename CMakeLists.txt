@@ -8,16 +8,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SFML_INC_DIR "${CMAKE_SOURCE_DIR}/include")
 set(SFML_LIB_DIR "${CMAKE_SOURCE_DIR}/library")
 
-add_executable(tiktacktoe main.cpp)
+add_executable(tiktacktoe    main.cpp    src/GUI.cpp  src/Game.cpp)
 
-target_include_directories(tiktacktoe PRIVATE ${SFML_INC_DIR})
+target_include_directories(tiktacktoe PRIVATE ${SFML_INC_DIR} ${CMAKE_SOURCE_DIR}/include)
 
 set(SFML_LIBS
-    ${SFML_LIB_DIR}/sfml-graphics.lib
-    ${SFML_LIB_DIR}/sfml-window.lib
-    ${SFML_LIB_DIR}/sfml-system.lib
-    ${SFML_LIB_DIR}/sfml-audio.lib
-    ${SFML_LIB_DIR}/sfml-network.lib
+    ${SFML_LIB_DIR}/sfml-graphics-d.lib
+    ${SFML_LIB_DIR}/sfml-window-d.lib
+    ${SFML_LIB_DIR}/sfml-system-d.lib
+    ${SFML_LIB_DIR}/sfml-audio-d.lib
+    ${SFML_LIB_DIR}/sfml-network-d.lib
 )
 
 
@@ -39,5 +39,11 @@ endif()
 set_target_properties(tiktacktoe PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
+
+# Copy font next to the executable for easy loading
+add_custom_command(TARGET tiktacktoe POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${CMAKE_SOURCE_DIR}/include/Comic Jungle.ttf"
+            "$<TARGET_FILE_DIR:tiktacktoe>/Comic Jungle.ttf")
 
 
