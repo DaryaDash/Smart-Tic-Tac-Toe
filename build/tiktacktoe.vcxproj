@@ -119,18 +119,6 @@
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PostBuildEvent>
-      <Message></Message>
-      <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/user/Desktop/cppGame/include/Comic Jungle.ttf" "C:/Users/user/Desktop/cppGame/build/bin/Debug/Comic Jungle.ttf"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\Users\user\Desktop\cppGame\library\sfml-graphics-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-window-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-system-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-audio-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-network-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-main-s.lib;opengl32.lib;winmm.lib;gdi32.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -185,18 +173,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PostBuildEvent>
-      <Message></Message>
-      <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/user/Desktop/cppGame/include/Comic Jungle.ttf" "C:/Users/user/Desktop/cppGame/build/bin/Release/Comic Jungle.ttf"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\Users\user\Desktop\cppGame\library\sfml-graphics-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-window-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-system-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-audio-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-network-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-main-s.lib;opengl32.lib;winmm.lib;gdi32.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -251,18 +227,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PostBuildEvent>
-      <Message></Message>
-      <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/user/Desktop/cppGame/include/Comic Jungle.ttf" "C:/Users/user/Desktop/cppGame/build/bin/MinSizeRel/Comic Jungle.ttf"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\Users\user\Desktop\cppGame\library\sfml-graphics-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-window-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-system-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-audio-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-network-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-main-s.lib;opengl32.lib;winmm.lib;gdi32.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -316,18 +280,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PostBuildEvent>
-      <Message></Message>
-      <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/user/Desktop/cppGame/include/Comic Jungle.ttf" "C:/Users/user/Desktop/cppGame/build/bin/RelWithDebInfo/Comic Jungle.ttf"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PostBuildEvent>
     <Link>
       <AdditionalDependencies>C:\Users\user\Desktop\cppGame\library\sfml-graphics-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-window-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-system-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-audio-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-network-d.lib;C:\Users\user\Desktop\cppGame\library\sfml-main-s.lib;opengl32.lib;winmm.lib;gdi32.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

@@ -11,7 +11,7 @@ public:
     void display();
     sf::RenderWindow& getWindow();
 
-    void drawFileld();
+    void drawFileld(const Board& board);
     bool drawMove(Board& board, int x, int y, Board::Cell who);
     void drawBoard(const Board& board);
     void winMassage(int res);

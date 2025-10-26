@@ -3,7 +3,7 @@ project(tiktacktoe VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_CXX_FLAGS )
 
 set(SFML_INC_DIR "${CMAKE_SOURCE_DIR}/include")
 set(SFML_LIB_DIR "${CMAKE_SOURCE_DIR}/library")
@@ -32,6 +32,7 @@ if (WIN32)
         gdi32
         ws2_32
     )
+
 else()
     target_link_libraries(tiktacktoe PRIVATE ${SFML_LIBS})
 endif()
@@ -40,10 +41,6 @@ set_target_properties(tiktacktoe PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
 
-# Copy font next to the executable for easy loading
-add_custom_command(TARGET tiktacktoe POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${CMAKE_SOURCE_DIR}/include/Comic Jungle.ttf"
-            "$<TARGET_FILE_DIR:tiktacktoe>/Comic Jungle.ttf")
+
 
 

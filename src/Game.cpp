@@ -38,9 +38,9 @@ void Game::menu() {
 }
 
 void Game::ticTackToe() {
-    sf::Music moveMusic, winMusic;
-    moveMusic.openFromFile("n.mp3");
-    winMusic.openFromFile("w.mp3");
+    //sf::Music moveMusic, winMusic;
+    //moveMusic.openFromFile("n.mp3");
+    //winMusic.openFromFile("w.mp3");
 
     gui.getWindow().setVerticalSyncEnabled(true);
 
@@ -67,15 +67,15 @@ void Game::ticTackToe() {
             const sf::Vector2i mp = sf::Mouse::getPosition(gui.getWindow());
             if (isRun) {
                 if (gui.drawMove(board, mp.x, mp.y, plr)) {
-                    if (moveMusic.getStatus() == sf::SoundSource::Status::Playing) moveMusic.stop();
-                    moveMusic.play();
+                    //if (moveMusic.getStatus() == sf::SoundSource::Status::Playing) moveMusic.stop();
+                    //moveMusic.play();
 
                     const int res = board.terminate();
                     if (res != -2) {
-                        if (moveMusic.getStatus() == sf::SoundSource::Status::Playing) moveMusic.stop();
-                        winMusic.play();
+                       // if (moveMusic.getStatus() == sf::SoundSource::Status::Playing) moveMusic.stop();
+                       // winMusic.play();
                         isRun = false;
-                        // winMassage будет нарисовано в рендер-проходе ниже
+                       
                     } else {
                         plr = curr(plr);
                     }
@@ -83,9 +83,7 @@ void Game::ticTackToe() {
             }
         }
         wasMouseDown = mouseDown;
-
-        // РЕНДЕР ОДИН РАЗ ЗА КАДР
-        gui.drawBoard(board);       // внутри делает clear+grid+фигуры
+        gui.drawBoard(board);    
         if (!isRun) gui.winMassage(board.terminate() == -2 ? 0 : board.terminate()); // при необходимости покажи статус
         gui.display();
     }
